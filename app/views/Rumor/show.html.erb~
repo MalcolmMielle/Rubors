@@ -1,0 +1,6 @@
+
+	
+<% rumor=Rumor.find(1) %>
+<h1><%= rumor.status %></h1>
+<p>Posted by <%= rumor.user.name %></p>
+
