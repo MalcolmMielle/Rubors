@@ -1,0 +1,5 @@
+class RemoveUserFromRumor < ActiveRecord::Migration
+  def change
+    remove_column :rumors, :field_name, :user
+  end
+end

@@ -2,7 +2,11 @@
 <html>
 	<head><title>Rumoooors</title></head>
 	<body>
-	<header>...</header>
+	<header>rumoOoooOOors de ta mère...</header>
+	
+	<%if flash[:notice]%>
+		<div id="notice"><%= flash[:notice]%></div>
+	<%end%>
 	
 	<%= yield%>
 	

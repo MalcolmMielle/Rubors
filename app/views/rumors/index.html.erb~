@@ -6,11 +6,12 @@
 	</tr>
 	<% Rumor.all.each do |rumor| %>
 	<tr>
-		<td><%=rumor.status %></td>
-		<td><%=rumor.user %></td>
+		<td><%= link_to rumor.status, rumor %></td>
+		<td><%= link_to rumor.user.name, rumor.user %></td>
 	</tr>
 	<%end%>
 	<%if Rumor.all.size==0%>
 		<em>No Rumors found...</em>
+	<%end%>
 </table>
 

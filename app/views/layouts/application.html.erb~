@@ -2,7 +2,7 @@
 <html>
 	<head><title>Rumoooors</title></head>
 	<body>
-	<header>...</header>
+	<header>rumoOoooOOors de ta mère...</header>
 	
 	<%= yield%>
 	
