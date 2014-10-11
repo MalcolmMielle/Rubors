@@ -1,0 +1,16 @@
+<h1>Listing all the rumors...</h1>
+<table>
+	<tr>
+		<th>Status</th>
+		<th>User</th>
+	</tr>
+	<% Rumor.all.each do |rumor| %>
+	<tr>
+		<td><%=rumor.status %></td>
+		<td><%=rumor.user %></td>
+	</tr>
+	<%end%>
+	<%if Rumor.all.size==0%>
+		<em>No Rumors found...</em>
+</table>
+
