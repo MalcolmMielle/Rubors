@@ -3,6 +3,17 @@ Rumors::Application.routes.draw do
 
 	resources :rumors
 	resources :users
+	get '/new_rumor' => 'rumors#new'
+	get '/new_user' => 'users#new'
+	
+	#redirection without changing
+	#get 'all' => 'rumors#index', as: 'all_rumors'
+	#redirectin
+	get '/all' => redirect('/rumors')
+	
+	#to the domain
+	root to: "rumors#index"
+	
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
