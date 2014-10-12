@@ -4,7 +4,7 @@
 		<th>Status</th>
 		<th>User</th>
 	</tr>
-	<% Rumor.all.each do |rumor| %>
+	<% @rumor.each do |rumor| %>
 	<tr>
 		<td><%= link_to rumor.status, rumor %></td>
 		<td><%= link_to rumor.user.name, rumor.user %></td>

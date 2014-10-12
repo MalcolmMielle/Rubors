@@ -38,7 +38,7 @@ class RumorsController < ApplicationController
 		end
 	end
 	def new #show form for a new rumor
-	
+
 	end
 	def edit #show edit action
 		

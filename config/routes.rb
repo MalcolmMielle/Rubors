@@ -18,7 +18,8 @@ Rumors::Application.routes.draw do
 	#get '/local_rumor/:postcode' => 'rumor#index'
 	
 	#show a user
-	get 'user/:name' => 'rumors#index', as: 'user_rumors'
+	#get 'user/:name' => 'rumors#index', as: 'user_rumors'
+	get ':name' => 'rumors#index', as: 'user_rumors'
 	
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

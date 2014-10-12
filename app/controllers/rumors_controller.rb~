@@ -38,7 +38,11 @@ class RumorsController < ApplicationController
 		end
 	end
 	def new #show form for a new rumor
-	
+		respond_to do |format|
+			format.html {render action: 'new'}
+			format.json {render json: @rumor}
+			format.xml {render xml: @rumor}
+		end
 	end
 	def edit #show edit action
 		

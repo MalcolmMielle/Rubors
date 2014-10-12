@@ -9,6 +9,7 @@
 		<td><%= link_to rumor.status, rumor %></td>
 		<td><%= link_to rumor.user.name, rumor.user %></td>
 		<td><%= link_to "Edit", edit_rumor_path(rumor) %></td>
+		<td><%= link_to "New", new_rumor_path(rumor) %></td>
 	</tr>
 	<%end%>
 	<%if Rumor.all.size==0%>
