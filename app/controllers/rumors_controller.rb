@@ -18,7 +18,17 @@ class RumorsController < ApplicationController
 
 	#SHOW PAGES ACTION
 	def index #show all rumors
-	
+		if params[:name]
+			@user= User.where(name: params[:name]).first
+			@rumor=@user.rumors
+		else
+			@rumor=Rumor.all
+		end
+#		respond_to do |format|
+#			format.html {render action: 'index'}
+#			format.json {render json: @rumor}
+#			format.xml {render xml: @rumor}
+#		end
 	end
 	def show #show one tweet
 		respond_to do |format|

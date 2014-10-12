@@ -7,12 +7,17 @@ class UsersController < ApplicationController
 	end	
 
 
-	def index
-	
-	end
 	def show
+		@rumors=Rumor.where(user: @user)
 		respond_to do |format|
 			format.html {render action: 'show'}
+			format.json {render json: @user}
+			format.xml {render xml: @user}
+		end
+	end
+	def index
+		respond_to do |format|
+			format.html {render action: 'index'}
 			format.json {render json: @user}
 			format.xml {render xml: @user}
 		end
