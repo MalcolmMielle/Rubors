@@ -1,0 +1,10 @@
+<h1><%= @user.name %></h1>
+
+<table>
+<% @rumors.each do |rumor| %>
+<tr>
+	<td><%= link_to rumor.status, rumor %></td>
+	<td><%= link_to rumor.user.name, rumor.user %></td>
+</tr>
+<%end%>
+</table>

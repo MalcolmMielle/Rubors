@@ -24,7 +24,7 @@
 <%= debug @rumor %>
 <p>
   <b>Title:</b>
-  <%= @rumor.user %>
+  <%= @rumor.name %>
   <%= @age%>
 </p>
 

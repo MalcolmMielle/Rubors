@@ -1,3 +1,5 @@
+require 'message'
+
 class RumorsController < ApplicationController
 
 	#Functions
@@ -38,13 +40,23 @@ class RumorsController < ApplicationController
 		end
 	end
 	def new #show form for a new rumor
-
+		@rumor=Rumor.new
+		
 	end
 	def edit #show edit action
 		
 	end
 	def create #create a tweet
-	
+		
+		@user=User.where(:name =>params[:rumor][:user]).first #TODO
+		
+		#debugger
+		@rumor=Rumor.new(:status => params[:rumor][:status], :user => @user)
+		if @rumor.save
+			redirect_to rumors_path, :notice => "Success"
+		else
+			render "new"
+		end
 	end
 	def update
 	
