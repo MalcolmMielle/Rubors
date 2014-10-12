@@ -1,4 +1,5 @@
 <p><%= link_to "Add a new rumor...", new_rumor_path%></p>
+<p><%= link_to "Subscribe and spread rumors...", new_rumor_path%></p>
 
 <h1>Listing all the rumors...</h1>
 
@@ -12,7 +13,7 @@
 		<td><%= link_to rumor.status, rumor %></td>
 		<td><%= link_to rumor.user.name, rumor.user %></td>
 		<td><%= link_to "Edit", edit_rumor_path(rumor) %></td>
-		<td><%= link_to "New", new_rumor_path(rumor) %></td>
+
 	</tr>
 	<%end%>
 	<%if Rumor.all.size==0%>

@@ -1,2 +1,6 @@
 class Rumor < ActiveRecord::Base
+	validates :status, 
+		presence: true, 
+		uniqueness: true
+	belongs_to :user
 end

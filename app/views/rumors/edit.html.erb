@@ -1,0 +1,15 @@
+<h1>Edit Rumor</h1>
+
+<%= form_for @rumor do |r| %>
+	<p>
+	<%= r.label :status%>
+	<%= r.text_field :status%>
+	</p>
+	<p>
+	<%= @rumor.user.name%> <!--Print Name-->
+	</p>
+	<p>
+	<%= r.submit "Update the Rumor..." %>
+	</p>
+
+<%end%>

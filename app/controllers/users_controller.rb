@@ -22,8 +22,26 @@ class UsersController < ApplicationController
 			format.xml {render xml: @user}
 		end
 	end
-	def create
-		@user = User.create(user_params)
-		redirect_to user_path(@user)
+	def new #show form for a new rumor
+		@user=User.new
+		
+	end
+
+	def create #create a tweet
+		
+		#debugger
+		@user=User.new(:name => params[:user][:name], :age => params[:user][:age])
+		if @user.save
+			redirect_to users_path, :notice => "Success"
+		else
+			render "new"
+		end
+	end
+	
+	
+	private
+
+	def user_params
+	params.require(:user).permit(:name)
 	end
 end

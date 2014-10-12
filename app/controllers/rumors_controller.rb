@@ -4,7 +4,7 @@ class RumorsController < ApplicationController
 
 	#Functions
 	before_action :get_rumor, only: [:show, :edit, :update, :destroy]
-	before_action :check_auth, only: [:edit, :update, :destroy]
+	#before_action :check_auth, only: [:edit, :update, :destroy]
 	
 	
 	def get_rumor
@@ -43,25 +43,41 @@ class RumorsController < ApplicationController
 		@rumor=Rumor.new
 		
 	end
-	def edit #show edit action
-		
-	end
+
 	def create #create a tweet
 		
 		@user=User.where(:name =>params[:rumor][:user]).first #TODO
 		
 		#debugger
 		@rumor=Rumor.new(:status => params[:rumor][:status], :user => @user)
-		if @rumor.save
+		
+		if @user!=nil and @rumor.save #Vérifie que l'utilisateur est bien enregistrer
 			redirect_to rumors_path, :notice => "Success"
 		else
 			render "new"
 		end
 	end
+	def edit #show edit action
+		@rumor=Rumor.find(params[:id])
+	end
 	def update
-	
+		@rumor= Rumor.find(params[:id])
+		if @rumor.update_attributes(rumor_params)
+			redirect_to rumors_path, :notice => "More details... more rumors"
+		else
+			render "edit"
+		end
 	end
 	def destroy
 	
 	end
+	
+	
+	private
+
+	def rumor_params
+	params.require(:rumor).permit(:status)
+	end
+	
+	
 end

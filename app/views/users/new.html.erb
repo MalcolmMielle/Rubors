@@ -1,0 +1,22 @@
+<h1>Add a new user</h1>
+
+<%= form_for @user do |user| %>
+
+	<p>
+	<%= user.label :name %><br />
+	<%= user.text_field :name %>
+	</p>
+	
+	<p>
+	<%= user.label :age %><br />
+	<%= user.text_area :age %>
+	</p>
+	
+	<p>
+	<%= user.submit "Add the new user" %><br />
+	</p>
+
+<%end%>
+
+
+<%= link_to 'Cancel', :back %>
