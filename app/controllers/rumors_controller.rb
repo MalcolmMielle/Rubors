@@ -54,6 +54,7 @@ class RumorsController < ApplicationController
 		if @user!=nil and @rumor.save #Vérifie que l'utilisateur est bien enregistrer
 			redirect_to rumors_path, :notice => "Success"
 		else
+			flash[:notice]="This user is not registered !"
 			render "new"
 		end
 	end
@@ -69,7 +70,9 @@ class RumorsController < ApplicationController
 		end
 	end
 	def destroy
-	
+		@post =Rumor.find(params[:id])
+		@post.destroy
+		redirect_to rumors_path, :notice => "The post has been deleted"
 	end
 	
 	

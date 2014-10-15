@@ -1,4 +1,3 @@
-
 <h1><%= @rumor.status %></h1>
-<p>Posted by <%= @rumor.user.name %></p>
+<p>Posted by <%= link_to @rumor.user.name, @rumor_user %></p>
 

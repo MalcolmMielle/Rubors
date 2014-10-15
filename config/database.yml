@@ -9,6 +9,8 @@ development:
   pool: 5
   timeout: 5000
 
+
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -23,3 +25,25 @@ production:
   database: db/database_production
   pool: 5
   timeout: 5000
+
+#####POSTGRE
+
+#development:
+#  adapter: postgresql
+#  host: localhost
+#  encoding: unicode
+#  database: rumor_development
+#  pool: 5
+#  username: malcolm
+#  password:
+
+
+#test:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: blog_test
+#  pool: 5
+#  username: malcolm
+#  password:
+
+
