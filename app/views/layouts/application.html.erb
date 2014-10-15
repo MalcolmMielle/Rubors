@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<%= javascript_include_tag 'application' %>
+
+<%= javascript_include_tag 'application' %><!-- To use the image-->
 <%= csrf_meta_tag %>
+<%=stylesheet_link_tag :application%> <!--To use CSS-->
 
 <html>
-	<head><title>Rumoooors</title></head>
+	<%= image_tag("rumors.jpg", :alt => "rumor you love") %>
+	<head><title>Rumors</title></head>
 	<body>
-	<header>rumoOoooOOors de ta mère...</header>
+	<header>RUMORS</header>
 	
 	<%if flash[:notice]%>
 		<div id="notice"><%= flash[:notice]%></div>
@@ -15,3 +18,5 @@
 	
 	</body>
 </html>
+
+<%= link_to "Return where the rumors are", rumors_path%> 
